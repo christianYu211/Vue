@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script src="../js/vue.js"></script>
+<body>
+    <div id="app">
+        <h2>{{fullName}}</h2>
+        <h2>{{fullName}}</h2>
+        <h2>{{fullName}}</h2>
+        <h2 >{{getFullName()}}</h2>
+        <h2 >{{getFullName()}}</h2>
+        <h2 >{{getFullName()}}</h2>
+    </div>
+</body>
+<style>
+    .active{
+        color: red
+    }
+</style>
+<script>
+    const app = new Vue({
+        el: '#app',
+        data:{
+           firstName: 'Yu',
+           lastName: 'Christian'
+        },
+        methods:{
+           getFullName(){
+               console.log('methods')
+               return this.lastName + this.firstName; 
+           }
+        },
+        computed:{
+            fullName(){
+                console.log('computed')
+                return this.lastName + this.firstName; 
+            }
+        }
+    })
+</script>
+</html>

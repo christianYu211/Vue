@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script src="../js/vue.js"></script>
+<body>
+    <div id="app">
+        
+    </div>
+</body>
+<style>
+    .active{
+        color: red
+    }
+</style>
+<script>
+    var btns = document.getElementsByTagName('button')
+    for(var i = 0;i < btns.length; i++){
+        (function(i){
+            btns[i].onclick = function(){
+                alert('点击了'+i+'个')
+            }
+        })(i)
+    }
+
+
+    const app = new Vue({
+        el: '#app',
+        data:{
+           
+        },
+        methods:{
+           changeColor(index){
+               this.tag = index
+               alert(this.tag)
+           },
+           getClasses(){
+               return {active: this.isActive, line: this.isLine}
+           }
+        }
+    })
+</script>
+</html>
